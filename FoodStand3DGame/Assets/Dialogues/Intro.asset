@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4a13adb89384c998c61502e1287a61, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  NPCAvatar: {fileID: 2800000, guid: a92455b77c757491988cae8e70932a65, type: 3}
+  DialogSlides:
+  - Welcome to the Bazaar!
+  - 'I hope you came hungry '
+  - because we jave lots of food to give away.
+  - Just make sure to choose the right food...
+  - HAHAHAHAHAHA
