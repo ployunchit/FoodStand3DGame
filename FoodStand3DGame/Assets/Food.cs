@@ -5,7 +5,8 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     float _rotationSpeed = 180f;
-    public static string CurrentFoodMousedOver; 
+
+    [SerializeField] RuntimeData _runtimeData;
     
     void Start()
     {
@@ -20,15 +21,15 @@ public class Food : MonoBehaviour
 
     void OnMouseEnter(){
         transform.Find("Spot Light").gameObject.SetActive(true);
-        CurrentFoodMousedOver = name;
+        _runtimeData.CurrentFoodMousedOver = name;
     }
 
     void OnMouseOver(){
-        transform.Find("Food Mesh").Rotate(Vector3.up, _rotationSpeed * Time.deltaTime);
+        transform.Find("Food Mesh").RotateAround(Vector3.up, _rotationSpeed * Time.deltaTime);
     }
 
     void OnMouseExit(){
         transform.Find("Spot Light").gameObject.SetActive(false);
-        CurrentFoodMousedOver = "";
+        _runtimeData.CurrentFoodMousedOver = "";
     }
 }

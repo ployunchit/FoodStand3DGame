@@ -5,9 +5,12 @@ using TMPro;
 
 public class FoodLabel : MonoBehaviour
 {
+
+    [SerializeField] RuntimeData _runtimeData;
+    
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = Food.CurrentFoodMousedOver;
+        GetComponent<TextMeshProUGUI>().text = _runtimeData.CurrentFoodMousedOver;
     }
 }
