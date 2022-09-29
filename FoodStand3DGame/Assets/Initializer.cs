@@ -6,6 +6,8 @@ public class Initializer : MonoBehaviour
 {
     [SerializeField] RuntimeData _runtimeData;
 
+    [SerializeField] Dialogue _startingDialogue;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -14,6 +16,6 @@ public class Initializer : MonoBehaviour
     }
 
     void Start(){
-        GameEvents.InvokeDialofInitiated();
+        GameEvents.InvokeDialogInitiated(_startingDialogue);
     }
 }

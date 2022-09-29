@@ -8,7 +8,7 @@ using System;
 public class DialogueManager : MonoBehaviour
 {
 
-    [SerializeField] Dialogue _currentDialogue;
+    Dialogue _currentDialogue;
 
     int _currentSlideIndex = 0;
 
@@ -22,8 +22,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_runtimeData.CurrentGameplayState = GameplayState.InDialog;
-        
+
     }
 
     // Update is called once per frame
@@ -35,21 +34,22 @@ public class DialogueManager : MonoBehaviour
                 ShowSlide();
             }
             else{
-                GameEvents.InvokeDialofFinished();
+                GameEvents.InvokeDialogFinished();
             }
                 
 
         }
     }
 
-    void OnDialogInitiated(object sender, EventArgs){
+    void OnDialogInitiated(object sender, DialogueEventArgs args){
+        _currentDialogue = args.dialoguePayload;
         _currentSlideIndex = 0;
         ShowSlide();
         LoadAvatar();
         GetComponent<Canvas>().enabled = true;
     }
 
-    void OnDialogFinished(object sender, EventArgs){
+    void OnDialogFinished(object sender, EventArgs args){
         GetComponent<Canvas>().enabled = false;
         _runtimeData.CurrentGameplayState = GameplayState.FreeWalk;
     }
